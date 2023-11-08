@@ -3,7 +3,7 @@ $GLOBALS['api_url'] = 'https://api.tls.moe/'; // 测试中，请勿更改此地�
 
 // 动漫类
 //// 观看进度（建议只开启一个）
-$GLOBALS['bangumi'] = ''; // bangumi user id | 如 228091 或是 txperl | 留空表示不开启
+$GLOBALS['bangumi'] = 'aqpower'; // bangumi user id | 如 228091 或是 txperl | 留空表示不开启
 $GLOBALS['bilibili'] = ''; // bilibili user id | 如 208259 | 留空表示不开启 | 开启后请注意隐私控制
 
 //说明

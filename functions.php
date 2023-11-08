@@ -64,17 +64,17 @@ function parseContnet($content)
 
     //添加 h3,h4 锚点
     $ftitle = array();
-    preg_match_all('/<h([3-4])>(.*?)<\/h[3-4]>/', $content, $title);
+    preg_match_all('/<h([2-3])>(.*?)<\/h[2-3]>/', $content, $title);
     $num = count($title[0]);
 
     for ($i = 0; $i < $num; $i++) {
         $f = $title[2][$i];
         $type = $title[1][$i];
+        if ($type == '2') {
+            $ff = '<h2 id="anchor-' . $i . '">' . $f . '</h2>';
+        }
         if ($type == '3') {
             $ff = '<h3 id="anchor-' . $i . '">' . $f . '</h3>';
-        }
-        if ($type == '4') {
-            $ff = '<h4 id="anchor-' . $i . '">' . $f . '</h4>';
         }
         array_push($ftitle, $ff);
     }
@@ -99,6 +99,11 @@ function parseContnet($content)
 
     print_r($content);
 }
+
+
+
+
+
 function str_replace_limit($search, $replace, $subject, $limit = 1)
 {
     if (is_array($search)) {
@@ -115,22 +120,24 @@ function post_tor($content)
 {
     $tor = array();
     $f = '<a href="#main-post"><span class="tori">Title</span></a><br>';
-    preg_match_all('/<h[3-4]>(.*?)<\/h[3-4]>/', $content, $tor_i);
+    preg_match_all('/<h[2-3]>(.*?)<\/h[2-3]>/', $content, $tor_i);
     $num = count($tor_i[0]);
     for ($i = 0; $i < $num; $i++) {
         $a = '<a href="#anchor-' . $i . '">' . $tor_i[0][$i] . '</a>';
         $f = $f . $a;
     }
-    $f = str_replace('<h3>', '<span class="tori">', $f);
+    $f = str_replace('<h2>', '<span class="tori">', $f);
+    $f = str_replace('</h2>', '</span><br>', $f);
+    $f = str_replace('<h3>', '<span class="torii">', $f);
     $f = str_replace('</h3>', '</span><br>', $f);
-    $f = str_replace('<h4>', '<span class="torii">', $f);
-    $f = str_replace('</h4>', '</span><br>', $f);
     if ($num == 0) {
         print_r('');
     } else {
         print_r($f);
     }
 }
+
+
 function change_color($c)
 {
     $index_time = 'dt a{color:' . $c[0] . '!important;}';
