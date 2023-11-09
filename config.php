@@ -5,8 +5,9 @@
 //Pages -换页导航中间的三条杠！
 $GLOBALS['tools_Pages_if'] = 'off'; //是否开启自定义链接
 $GLOBALS['tools_Pages'] = array(
-    '{your_title}' => '{your_url}',
-    'Home' => 'https://aqpower.cn'
+    '归档' => 'https://blog.aqpower.cn/index.php/archieve.html',
+    '首页' => 'https://aqpower.cn',
+    '关于' => 'https://blog.aqpower.cn/index.php/start-page.html',
 );
 
 //底部小工具
