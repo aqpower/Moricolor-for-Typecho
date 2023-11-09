@@ -37,7 +37,9 @@ $index_img = $GLOBALS['index_Image'];
             'tag'       =>  _t('%s'),
             'author'    =>  _t('%s')
           ), '', ' - '); ?><?php $this->options->title(); ?></title>
-
+  <!---- icon>-->
+  <link rel="shortcut icon" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" />
+  
   <link href="<?php $this->options->themeUrl('./css/mori.css'); ?>" rel="stylesheet">
   <link href="<?php $this->options->themeUrl('./css/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
   <link href="<?php $this->options->themeUrl('./css/flat-ui.min.css'); ?>" rel="stylesheet">
