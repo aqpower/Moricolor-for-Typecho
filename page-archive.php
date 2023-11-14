@@ -32,18 +32,22 @@ $this->need('header.php'); ?>
       <!-- 文章归档 -->
       <div clss="post-archive" itemprop="articleBody">
         <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
+        
+
         $year = 0;
         $mon = 0;
         $i = 0;
         $j = 0;
         $a = 0;
+        
         $output = '<div id="archives">';
         while ($archives->next()) :
           $a = $a + 1;
           if ($a == 1) {
             $collapse = 'collapse in';
           } else {
-            $collapse = 'collapse';
+            // $collapse = 'collapse';  如果设置为这个，那么文章归档只会显示今年的。
+            $collapse = 'collapse in';
           }
           $year_tmp = date('Y', $archives->created);
           $mon_tmp = date('m', $archives->created);
