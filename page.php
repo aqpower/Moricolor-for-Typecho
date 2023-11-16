@@ -1,5 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php 
+$this->need('header.php');
+?>
 
 <div id="main" class="container">
     <div id="main-page" role="main" style="display: none;">

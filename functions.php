@@ -156,3 +156,12 @@ function change_fontweight($w)
     }
     return $rst;
 }
+
+
+// 增加文章阅读数
+function add_post_view_count($archive) {
+    $cid    = $archive->cid;
+    $db     = Typecho_Db::get();
+    $row = $db->fetchRow($db->select('view_count')->from('table.contents')->where('cid = ?', $cid));
+    $db->query($db->update('table.contents')->rows(array('view_count' => (int) $row['view_count'] + 1))->where('cid = ?', $cid));
+}

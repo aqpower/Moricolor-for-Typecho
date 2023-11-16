@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php $this->need('header.php'); add_post_view_count($this);?>
 
 <div id="main" class="container">
     <div id="main-post" role="main" itemscope itemtype="http://schema.org/BlogPosting" style="display: none;">
